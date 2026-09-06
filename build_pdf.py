@@ -97,7 +97,7 @@ def bullet_list(canvas: Canvas, items: list[str], x: float, top: float, width: f
 
 
 def header(canvas: Canvas, page: int, title_text: str) -> None:
-    label(canvas, "石女士  /  AI Agent 应用开发与后端工程", MARGIN, PAGE_H - 17 * mm, INK, 7.3)
+    label(canvas, "BoringBlue  /  PHP 后端与 AI Agent 应用开发", MARGIN, PAGE_H - 17 * mm, INK, 7.3)
     canvas.setFillColor(MUTED)
     canvas.setFont("ResumeSong", 7.3)
     canvas.drawRightString(PAGE_W - MARGIN - 18, PAGE_H - 17 * mm, title_text)
@@ -109,7 +109,7 @@ def header(canvas: Canvas, page: int, title_text: str) -> None:
 
 def footer(canvas: Canvas, page: int) -> None:
     rule(canvas, MARGIN, 14 * mm, PAGE_W - MARGIN, LINE, 0.7)
-    label(canvas, "i@boringblue.cn  ·  130 2429 2336  ·  杭州", MARGIN, 9 * mm, MUTED, 6.8)
+    label(canvas, "boringblue007@gmail.com  ·  130 2429 2336  ·  杭州", MARGIN, 9 * mm, MUTED, 6.8)
     label(canvas, f"PAGE 0{page} / 02", PAGE_W - MARGIN - 51, 9 * mm, MUTED, 6.8)
 
 
@@ -119,10 +119,10 @@ def page_one(canvas: Canvas) -> None:
     header(canvas, 1, "个人简介与工作经历")
 
     # Identity and contact.
-    text(canvas, "石女士", PAGE_TITLE, MARGIN, PAGE_H - 30 * mm, 160)
-    label(canvas, "AI Agent 应用开发  ·  Python 后端  ·  PHP 后端", MARGIN, PAGE_H - 48 * mm, INK, 9.2)
+    text(canvas, "BoringBlue", PAGE_TITLE, MARGIN, PAGE_H - 30 * mm, 220)
+    label(canvas, "PHP 后端  ·  AI Agent 应用开发  ·  全栈", MARGIN, PAGE_H - 48 * mm, INK, 9.2)
     label(canvas, "7 年后端开发经验", PAGE_W - MARGIN - 116, PAGE_H - 31 * mm, CORAL_TEXT, 8.3)
-    label(canvas, "i@boringblue.cn", PAGE_W - MARGIN - 116, PAGE_H - 38 * mm, INK, 8.3)
+    label(canvas, "boringblue007@gmail.com", PAGE_W - MARGIN - 116, PAGE_H - 38 * mm, INK, 8.3)
     label(canvas, "130 2429 2336  ·  杭州", PAGE_W - MARGIN - 116, PAGE_H - 45 * mm, MUTED, 8.0)
 
     label(canvas, "PROFILE / 个人简介", MARGIN, PAGE_H - 56 * mm, CORAL_TEXT, 7.5)
@@ -146,8 +146,8 @@ def page_one(canvas: Canvas) -> None:
     card(canvas, MARGIN, current_y, CONTENT_W, current_h, WHITE, 8)
     canvas.setFillColor(CORAL)
     canvas.roundRect(MARGIN, current_y, 4, current_h, 2, fill=1, stroke=0)
-    chip(canvas, "CURRENT ROLE", MARGIN + 15, current_y + current_h - 22, CORAL_FADE, 6.4)
-    label(canvas, "2023.11 - NOW  /  PHP 后端开发", MARGIN + 108, current_y + current_h - 18, MUTED, 7.2)
+    chip(canvas, "LATEST ROLE", MARGIN + 15, current_y + current_h - 22, CORAL_FADE, 6.4)
+    label(canvas, "2023.11 - 2026.07  /  PHP 后端开发", MARGIN + 108, current_y + current_h - 18, MUTED, 7.2)
     text(canvas, "杭州多麦电子商务股份有限公司", COMPANY, MARGIN + 15, current_y + current_h - 38, CONTENT_W - 30)
     text(
         canvas,
@@ -283,8 +283,8 @@ def page_two(canvas: Canvas) -> None:
     project_y = 280
     project_h = 142
     projects = [
-        ("01", "舌面脉象\n检测仪系统", "舌面、脉象采集与分析；负责数据库、接口、部署与线上优化。", "PHP · WEBMAN · VUE", SKY),
-        ("02", "脉象商城\n小程序", "商城二次开发；新增页面 DIY、舌象分析与报告列表模块。", "TP6 · UNIAPP", CORAL),
+        ("01", "海外 CPS\n联盟平台", "参与管理端、流量主端和广告主端开发迭代；后期主要负责流量主端更新及开放平台维护。", "PHP · PHALCON · MYSQL", SKY),
+        ("02", "舌面脉象\n检测仪系统", "舌面、脉象采集与分析；负责数据库、接口、部署与线上优化。", "PHP · WEBMAN · VUE", CORAL),
         ("03", "聚客猫\nSCRM", "活动发布、智能对账和商家工具；完成支付与第三方 API 对接。", "YII 2 · MYSQL", SKY),
     ]
     for index, (number, title_value, description, stack, accent) in enumerate(projects):
@@ -294,15 +294,15 @@ def page_two(canvas: Canvas) -> None:
         canvas.roundRect(x, project_y + project_h - 4, project_w, 4, 2, fill=1, stroke=0)
         label(canvas, f"PROJECT {number}", x + 12, project_y + project_h - 21, MUTED, 6.5)
         text(canvas, title_value, CARD_TITLE, x + 12, project_y + project_h - 34, project_w - 24)
-        text(canvas, description, SMALL_MUTED, x + 12, project_y + 53, project_w - 24)
-        rule(canvas, x + 12, project_y + 27, x + project_w - 12, LINE, 0.6)
+        text(canvas, description, SMALL_MUTED, x + 12, project_y + 58, project_w - 24)
+        rule(canvas, x + 12, project_y + 25, x + project_w - 12, LINE, 0.6)
         label(canvas, stack, x + 12, project_y + 13, INK, 6.5)
 
     # Skills.
     label(canvas, "TOOLKIT / 技术能力", MARGIN, 257, CORAL_TEXT, 7.5)
     skills = [
         ("BACKEND", "PHP · Phalcon · Yii · Webman · Python · FastAPI"),
-        ("DATA", "MySQL · ClickHouse · Redis · Kafka · 查询优化"),
+        ("DATA", "MySQL · Redis · ClickHouse · Kafka · 查询优化"),
         ("AI APPLICATION", "Coze · LLM 分析与搜索 · Function Calling · SSE"),
         ("DELIVERY", "Linux · Docker · Nginx · Git · 线上排障"),
     ]
@@ -333,8 +333,8 @@ def page_two(canvas: Canvas) -> None:
 
 
 canvas = Canvas(str(OUTPUT), pagesize=A4)
-canvas.setTitle("石女士 - AI Agent 应用开发 / Python 后端 / PHP 后端")
-canvas.setAuthor("石女士")
+canvas.setTitle("BoringBlue - PHP 后端 / AI Agent 应用开发 / 全栈")
+canvas.setAuthor("BoringBlue")
 canvas.setSubject("在线简历 PDF")
 page_one(canvas)
 canvas.showPage()

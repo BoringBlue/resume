@@ -1,4 +1,4 @@
-# 石女士的在线简历
+# BoringBlue 的在线简历
 
 这是一个使用原生 HTML 和 CSS 构建的 GitHub Pages 简历站点。
 
