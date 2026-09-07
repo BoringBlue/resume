@@ -83,8 +83,8 @@ h1, h2, h3, p { text-wrap: pretty; }
   height: 15px;
   border: 1.5px solid var(--ink);
   border-radius: 50% 45% 48% 35%;
-  background: var(--coral);
-  box-shadow: 4px 2px 0 var(--yellow);
+  background: var(--sky-soft);
+  box-shadow: 4px 2px 0 var(--sky);
   transform: rotate(-16deg);
 }
 
@@ -210,8 +210,8 @@ h1, h2, h3, p { text-wrap: pretty; }
   place-items: center;
   border: 2px solid var(--ink);
   border-radius: 43% 57% 49% 51%;
-  background: var(--coral);
-  box-shadow: 8px 8px 0 var(--yellow);
+  background: var(--sky-soft);
+  box-shadow: 8px 8px 0 var(--sky);
   font-family: var(--font-hand);
   font-size: 156px;
   font-weight: 900;
@@ -673,7 +673,7 @@ h1, h2, h3, p { text-wrap: pretty; }
   .hero-paper { min-height: auto; padding: 54px 25px 43px; box-shadow: 8px 9px 0 var(--sky); }
   .paperclip { right: 30px; }
   .hero h1 { gap: 13px; }
-  .name-main { width: 118px; height: 118px; font-size: 95px; box-shadow: 5px 5px 0 var(--yellow); }
+  .name-main { width: 118px; height: 118px; font-size: 95px; box-shadow: 5px 5px 0 var(--sky); }
   .name-rest { padding-bottom: 10px; font-size: clamp(55px, 18vw, 78px); }
   .name-rest::after { height: 8px; }
   .hero-thesis { font-size: 16px; }
