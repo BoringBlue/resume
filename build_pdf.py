@@ -160,10 +160,11 @@ def page_one(canvas: Canvas) -> None:
     bullet_list(
         canvas,
         [
-            "参与后台管理系统、广告主端和流量主端的需求开发，后续主要负责流量主端业务。",
-            "负责需求评审、任务拆分、排期、开发联调、测试配合、版本发布及线上问题修复。",
-            "负责流量主钱包改造，覆盖多币种钱包、结算到账、提现和余额流水等核心功能。",
-            "参与 Coze 智能客服对接，以及营销日历、计划、商品等业务接入大模型，支持 AI 分析与搜索。",
+            "参与后台管理系统、广告主端和流量主端建设，后续负责流量主端全模块的开发迭代、维护及线上稳定性。",
+            "覆盖活动与计划、合作申请与报价、推广社媒、审核状态、推广链接、订单与效果数据、佣金结算等完整链路。",
+            "维护开放平台及相关接口对接，并承担评审、拆解、排期、开发联调、测试发布和线上排障等交付工作。",
+            "近期完成多币种钱包改造，覆盖结算到账、提现、余额流水及相关资金流程。",
+            "近期参与 Coze 智能客服，以及营销日历、计划、商品等大模型分析与搜索能力接入。",
         ],
         MARGIN + 15,
         current_y + current_h - 91,
@@ -226,55 +227,77 @@ def page_one(canvas: Canvas) -> None:
 def page_two(canvas: Canvas) -> None:
     canvas.setFillColor(PAPER)
     canvas.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
-    header(canvas, 2, "AI 项目、项目经验与技术能力")
+    header(canvas, 2, "技术优势、业务经验与项目能力")
 
-    text(canvas, "项目与能力", PAGE_TITLE, MARGIN, PAGE_H - 30 * mm, 220)
-    label(canvas, "业务经验正在向 AI Agent 应用延伸", MARGIN, PAGE_H - 48 * mm, MUTED, 8.5)
+    text(canvas, "优势与能力", PAGE_TITLE, MARGIN, PAGE_H - 30 * mm, 220)
+    label(canvas, "7 年 PHP 后端经验，兼具全栈交付、分布式应用与多业务场景理解", MARGIN, PAGE_H - 48 * mm, MUTED, 8.5)
 
-    # AI Agent project.
-    agent_y = 456
-    agent_h = 224
-    card(canvas, MARGIN, agent_y, CONTENT_W, agent_h, WHITE, 9)
+    # Core strengths.
+    strengths_y = 456
+    strengths_h = 224
+    card(canvas, MARGIN, strengths_y, CONTENT_W, strengths_h, WHITE, 9)
     canvas.setFillColor(SKY)
-    canvas.roundRect(MARGIN, agent_y, 4, agent_h, 2, fill=1, stroke=0)
-    chip(canvas, "开发中", MARGIN + 16, agent_y + agent_h - 24, CORAL_FADE, 6.7)
-    label(canvas, "PERSONAL PROJECT", MARGIN + 74, agent_y + agent_h - 20, MUTED, 6.8)
-    text(canvas, "海外达人合作运营智能体", PROJECT_TITLE, MARGIN + 16, agent_y + agent_h - 43, CONTENT_W - 32)
+    canvas.roundRect(MARGIN, strengths_y, 4, strengths_h, 2, fill=1, stroke=0)
+    chip(canvas, "核心优势", MARGIN + 16, strengths_y + strengths_h - 24, CORAL_FADE, 6.7)
+    label(canvas, "TECH & ENGINEERING / BUSINESS DOMAIN", MARGIN + 81, strengths_y + strengths_h - 20, MUTED, 6.8)
+    text(canvas, "技术能落地，业务有上下文", PROJECT_TITLE, MARGIN + 16, strengths_y + strengths_h - 43, CONTENT_W - 32)
     text(
         canvas,
-        "面向海外广告营销场景，把活动需求、达人筛选和申请报价串成一条可控制、可确认的自动化流程。",
+        "技术上以 PHP 后端为主，覆盖全栈、部署、分布式与 AI 应用；业务上经历过电商、海外营销、健康科技和数据展示。",
         BODY_MUTED,
         MARGIN + 16,
-        agent_y + agent_h - 74,
+        strengths_y + strengths_h - 74,
         CONTENT_W - 32,
     )
 
-    principle_y = agent_y + 80
-    principle_gap = 12
-    principle_w = (CONTENT_W - 44 - principle_gap) / 2
-    for index, (title_value, detail) in enumerate([
-        ("模型负责", "理解需求 · 选择工具 · 解释结果"),
-        ("代码负责", "校验参数 · 计算报价 · 控制权限"),
-    ]):
-        x = MARGIN + 16 + index * (principle_w + principle_gap)
-        canvas.setFillColor(CORAL_FADE if index == 0 else SKY_FADE)
+    inner_x = MARGIN + 16
+    inner_w = CONTENT_W - 32
+    column_gap = 10
+    column_w = (inner_w - column_gap) / 2
+    columns = [
+        (
+            "01 / 技术与工程能力",
+            [
+                "PHP：主流框架；Python 小工具；Java 代码可读",
+                "全栈：前端项目、0→1 开发及 Linux / Docker 部署",
+                "AI：多模型接口、Coze、分析搜索及 AI 辅助开发",
+                "分布式：MySQL、Redis、Kafka、ClickHouse",
+            ],
+            SKY_FADE,
+            SKY_TEXT,
+        ),
+        (
+            "02 / 业务场景理解",
+            [
+                "海外 CPS：活动、归因、结算、钱包与开放平台",
+                "电商 SCRM：商家服务、支付、对账与第三方 API",
+                "中医健康：设备、算法、专家与多端团队协作",
+                "数据展示：数据大屏、PC、H5 与微信端",
+            ],
+            CORAL_FADE,
+            CORAL_TEXT,
+        ),
+    ]
+    column_y = strengths_y + 37
+    column_h = 85
+    for index, (title_value, items, fill, accent) in enumerate(columns):
+        x = inner_x + index * (column_w + column_gap)
+        canvas.setFillColor(fill)
         canvas.setStrokeColor(LINE)
-        canvas.roundRect(x, principle_y, principle_w, 34, 6, fill=1, stroke=1)
-        label(canvas, title_value, x + 10, principle_y + 20, CORAL_TEXT if index == 0 else SKY_TEXT, 7.0)
-        label(canvas, detail, x + 10, principle_y + 8, INK, 6.7)
+        canvas.roundRect(x, column_y, column_w, column_h, 6, fill=1, stroke=1)
+        label(canvas, title_value, x + 10, column_y + column_h - 17, accent, 7.0)
+        item_y = column_y + column_h - 34
+        for item in items:
+            canvas.setFillColor(accent)
+            canvas.circle(x + 12, item_y + 2, 1.6, fill=1, stroke=0)
+            label(canvas, item, x + 19, item_y, INK, 6.25)
+            item_y -= 14.5
 
-    flow_labels = ["活动需求", "达人筛选", "报价建议", "人工确认", "申请草稿"]
-    flow_x = MARGIN + 16
-    flow_y = agent_y + 24
-    flow_gap = 7
-    flow_w = (CONTENT_W - 32 - flow_gap * 4) / 5
-    for index, value in enumerate(flow_labels):
-        x = flow_x + index * (flow_w + flow_gap)
-        canvas.setFillColor(CORAL_FADE if index % 2 == 0 else SKY_FADE)
-        canvas.setStrokeColor(LINE)
-        canvas.roundRect(x, flow_y, flow_w, 36, 6, fill=1, stroke=1)
-        label(canvas, f"0{index + 1}", x + 8, flow_y + 22, MUTED, 6.2)
-        label(canvas, value, x + 8, flow_y + 9, INK, 7.0)
+    canvas.setFillColor(colors.HexColor("#F2FAD9"))
+    canvas.setStrokeColor(LINE)
+    canvas.roundRect(inner_x, strengths_y + 9, inner_w, 21, 6, fill=1, stroke=1)
+    label(canvas, "学习与适应", inner_x + 10, strengths_y + 16, CORAL_TEXT, 6.6)
+    label(canvas, "快速理解陌生业务与技术栈，熟练使用 AI 辅助设计、编码、调试和知识沉淀。", inner_x + 70, strengths_y + 16, INK, 6.3)
 
     # Selected projects.
     label(canvas, "SELECTED PROJECTS / 项目经验", MARGIN, 438, CORAL_TEXT, 7.5)
@@ -283,7 +306,7 @@ def page_two(canvas: Canvas) -> None:
     project_y = 280
     project_h = 142
     projects = [
-        ("01", "海外 CPS\n联盟平台", "参与管理端、流量主端和广告主端开发迭代；后期主要负责流量主端更新及开放平台维护。", "PHP · PHALCON · MYSQL", SKY),
+        ("01", "海外 CPS\n联盟平台", "参与三端建设；后期负责流量主端全模块迭代及开放平台，覆盖推广、订单、结算与钱包链路。", "PHP · PHALCON · MYSQL", SKY),
         ("02", "舌面脉象\n检测仪系统", "舌面、脉象采集与分析；负责数据库、接口、部署与线上优化。", "PHP · WEBMAN · VUE", CORAL),
         ("03", "聚客猫\nSCRM", "活动发布、智能对账和商家工具；完成支付与第三方 API 对接。", "YII 2 · MYSQL", SKY),
     ]
