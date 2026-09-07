@@ -97,7 +97,7 @@ def bullet_list(canvas: Canvas, items: list[str], x: float, top: float, width: f
 
 
 def header(canvas: Canvas, page: int, title_text: str) -> None:
-    label(canvas, "BoringBlue  /  PHP 后端与 AI Agent 应用开发", MARGIN, PAGE_H - 17 * mm, INK, 7.3)
+    label(canvas, "石胜蓝  /  PHP 后端与 AI Agent 应用开发", MARGIN, PAGE_H - 17 * mm, INK, 7.3)
     canvas.setFillColor(MUTED)
     canvas.setFont("ResumeSong", 7.3)
     canvas.drawRightString(PAGE_W - MARGIN - 18, PAGE_H - 17 * mm, title_text)
@@ -119,7 +119,7 @@ def page_one(canvas: Canvas) -> None:
     header(canvas, 1, "个人简介与工作经历")
 
     # Identity and contact.
-    text(canvas, "BoringBlue", PAGE_TITLE, MARGIN, PAGE_H - 30 * mm, 220)
+    text(canvas, "石胜蓝", PAGE_TITLE, MARGIN, PAGE_H - 30 * mm, 220)
     label(canvas, "PHP 后端  ·  AI Agent 应用开发  ·  全栈", MARGIN, PAGE_H - 48 * mm, INK, 9.2)
     label(canvas, "7 年后端开发经验", PAGE_W - MARGIN - 116, PAGE_H - 31 * mm, CORAL_TEXT, 8.3)
     label(canvas, "boringblue007@gmail.com", PAGE_W - MARGIN - 116, PAGE_H - 38 * mm, INK, 8.3)
@@ -356,8 +356,8 @@ def page_two(canvas: Canvas) -> None:
 
 
 canvas = Canvas(str(OUTPUT), pagesize=A4)
-canvas.setTitle("BoringBlue - PHP 后端 / AI Agent 应用开发 / 全栈")
-canvas.setAuthor("BoringBlue")
+canvas.setTitle("石胜蓝 - PHP 后端 / AI Agent 应用开发 / 全栈")
+canvas.setAuthor("石胜蓝")
 canvas.setSubject("在线简历 PDF")
 page_one(canvas)
 canvas.showPage()
